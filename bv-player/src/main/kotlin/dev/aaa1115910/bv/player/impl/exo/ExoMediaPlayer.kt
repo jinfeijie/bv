@@ -150,13 +150,6 @@ class ExoMediaPlayer(
     override val debugInfo: String
         get() {
             return """
-                player: ${androidx.media3.common.MediaLibraryInfo.VERSION_SLASHY}
-                time: ${currentPosition.formatMinSec()} / ${duration.formatMinSec()}
-                buffered: $bufferedPercentage%
-                resolution: ${mPlayer?.videoSize?.width} x ${mPlayer?.videoSize?.height}
-                audio: ${mPlayer?.audioFormat?.bitrate ?: 0} kbps
-                video codec: ${mPlayer?.videoFormat?.sampleMimeType ?: "null"}
-                audio codec: ${mPlayer?.audioFormat?.sampleMimeType ?: "null"}
             """.trimIndent()
         }
 

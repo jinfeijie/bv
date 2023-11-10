@@ -295,20 +295,6 @@ fun VideoPlayerController(
             }
     ) {
         content()
-        if (BuildConfig.DEBUG) {
-            Box(
-                modifier = Modifier
-                    .align(Alignment.TopStart)
-                    .padding(8.dp)
-                    .clip(MaterialTheme.shapes.medium)
-                    .background(Color.Black.copy(alpha = 0.3f))
-            ) {
-                Text(
-                    modifier = Modifier.padding(8.dp),
-                    text = data.debugInfo
-                )
-            }
-        }
         BottomSubtitle()
         SkipTips(
             historyTime = data.lastPlayed.toLong(),
