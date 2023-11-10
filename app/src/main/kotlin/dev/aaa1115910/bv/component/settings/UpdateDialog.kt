@@ -130,7 +130,6 @@ fun UpdateDialog(
                                     .getOrDefault(0f)
                         }
                     })
-                if (!BuildConfig.DEBUG) sendInstallAnalytics()
                 if (show) installUpdate(tempFile)
             }.onFailure {
                 updateStatus = UpdateStatus.DownloadError

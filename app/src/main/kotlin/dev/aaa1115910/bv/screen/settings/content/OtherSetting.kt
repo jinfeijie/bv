@@ -124,17 +124,6 @@ fun OtherSetting(
                     }
                 )
             }
-            if (BuildConfig.DEBUG) {
-                item {
-                    SettingListItem(
-                        title = stringResource(R.string.settings_crash_test_title),
-                        supportText = stringResource(R.string.settings_crash_test_text),
-                        onClick = {
-                            throw Exception("Boom!")
-                        }
-                    )
-                }
-            }
         }
     }
 

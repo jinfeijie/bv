@@ -186,7 +186,6 @@ fun VideoPlayerController(
                 .focusable()
                 .fillMaxSize()
                 .onPreviewKeyEvent {
-                    if (BuildConfig.DEBUG) logger.fInfo { "Native key event: ${it.nativeKeyEvent}" }
 
                     if (showingRightController()) {
                         if (listOf(
@@ -345,22 +344,6 @@ fun VideoPlayerController(
                 }
         ) {
             content()
-
-            if (BuildConfig.DEBUG) {
-                Text(
-                    modifier = Modifier
-                        .align(Alignment.TopEnd)
-                        .background(Color.Black),
-                    text = "焦点: $hasFocus"
-                )
-            }
-
-            if (BuildConfig.DEBUG) {
-                VideoPlayerInfoTip(
-                    modifier = Modifier.align(Alignment.TopStart),
-                    data = infoData
-                )
-            }
 
             if (showLogs) {
                 Text(

@@ -74,10 +74,10 @@ class BVApp : Application() {
     override fun onCreate() {
         super.onCreate()
         context = this.applicationContext
-        HandroidLoggerAdapter.DEBUG = BuildConfig.DEBUG
+        HandroidLoggerAdapter.DEBUG = false
         dataStoreManager = DataStoreManager(applicationContext.dataStore)
         koinApplication = startKoin {
-            androidLogger(if (BuildConfig.DEBUG) Level.ERROR else Level.NONE)
+            androidLogger(Level.NONE)
             androidContext(this@BVApp)
             modules(appModule)
         }

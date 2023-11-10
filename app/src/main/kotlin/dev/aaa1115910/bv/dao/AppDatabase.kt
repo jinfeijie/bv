@@ -46,7 +46,6 @@ abstract class AppDatabase : RoomDatabase() {
             )
                 .setQueryCallback(object : QueryCallback {
                     override fun onQuery(sqlQuery: String, bindArgs: List<Any?>) {
-                        if (BuildConfig.DEBUG) logger.info { "SQL Query: $sqlQuery SQL Args: $bindArgs" }
                     }
                 }, Executors.newSingleThreadExecutor())
                 .build()

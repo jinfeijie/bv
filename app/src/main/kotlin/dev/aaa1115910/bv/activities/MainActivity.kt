@@ -11,9 +11,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import dev.aaa1115910.bv.screen.HomeScreen
-import dev.aaa1115910.bv.screen.RegionBlockScreen
 import dev.aaa1115910.bv.ui.theme.BVTheme
-import dev.aaa1115910.bv.util.NetworkUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -32,13 +30,13 @@ class MainActivity : ComponentActivity() {
 
             LaunchedEffect(Unit) {
                 scope.launch(Dispatchers.Default) {
-                    isMainlandChina = NetworkUtil.isMainlandChina()
+                    isMainlandChina = false
                     keepSplashScreen = false
                 }
             }
 
             BVTheme {
-                if (isMainlandChina) RegionBlockScreen() else HomeScreen()
+                HomeScreen()
             }
         }
     }
